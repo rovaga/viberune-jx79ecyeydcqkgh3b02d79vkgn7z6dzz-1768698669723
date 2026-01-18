@@ -59,7 +59,20 @@ export class RanchGame implements Game {
     // Setup UI for lives
     this.setupLivesUI();
 
+    // Remove the controls instructions modal
+    this.removeInstructionsModal();
+
     console.log('[RanchGame] Initialized');
+  }
+
+  /**
+   * Removes the controls instructions modal from the DOM.
+   */
+  private removeInstructionsModal(): void {
+    const instructions = document.getElementById('instructions');
+    if (instructions) {
+      instructions.remove();
+    }
   }
 
   private setupDesertLighting(): void {
